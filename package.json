@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "gatsby": "^2.0.33",
-    "gh-pages": "^2.0.1",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-icons": "^3.2.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
