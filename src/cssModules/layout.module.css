@@ -4,22 +4,41 @@
 }
 
 .leftPanel {
-  width: 20%;
+  min-width: 200px;
+  max-width: 200px;
   border-right: 1px solid black;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .rightPanel {
-  width: 80%;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+
 }
 
 .header {
-  width: 100%;
-  height: 10%;
   text-align: center;
+}
+
+.body {
+  height: 100%;
+}
+
+.footer {
+  text-align: center;
+}
+
+.profileIcons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-left: 25px;
+  margin-right: 25px;
 }

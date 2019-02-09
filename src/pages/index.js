@@ -1,12 +1,17 @@
 import React from "react";
-import { mainContainer } from "../cssModules/layout.module.css";
-
-import LeftPanel from '../components/LeftPanel';
-import RightPanel from '../components/RightPanel';
+import Layout from './layout';
+import { Link } from "gatsby";
 
 export default () => (
-  <div className={mainContainer}>
-    <LeftPanel />
-    <RightPanel />
-  </div>
+  <Layout>
+    <ul>
+      <li>
+        <Link to="/blog/hello-gatsby" activeClassName=''>
+          Hello Gatsby
+        </Link>
+        <p>Dec 8, 2018</p>
+        <p>Description</p>
+      </li>
+    </ul>
+  </Layout>
 );
