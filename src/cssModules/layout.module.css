@@ -23,6 +23,11 @@
 
 }
 
+.linkStyle {
+  text-decoration: none;
+  color: green;
+}
+
 .header {
   text-align: center;
 }
@@ -31,8 +36,16 @@
   height: 100%;
 }
 
+.center {
+  text-align: center;
+}
+
 .footer {
   text-align: center;
+}
+
+.blackLink {
+  color: black;
 }
 
 .profileIcons {
