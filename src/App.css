@@ -1,0 +1,162 @@
+.layout {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content {
+  flex-grow: 3;
+  width: 75%;
+  margin: auto;
+}
+
+.NavBar {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  color: green;
+  padding-bottom: 15px;
+}
+
+nav.NavBar a {
+  text-decoration: none;
+}
+
+nav.NavBar a.activeNavLink {
+  text-decoration: none;
+  color: orange;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid green;
+}
+
+.rightPanel {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.linkStyle {
+  text-decoration: none;
+  color: green;
+}
+
+.body {
+  height: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.footer {
+  border-top: 1px solid green;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.blackLink {
+  color: black;
+}
+
+.profileIcons {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.profileIcons > a {
+  color: black;
+}
+
+.profileIconContainer {
+  width: 10%;
+  margin: auto;
+}
+
+.homePage {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jiggle:hover {
+  display: inline-block;
+  animation: jiggle 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes jiggle {
+  10%, 90% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  20%, 80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  30%, 50%, 70% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  40%, 60% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+}
+
+hr.partition {
+  background: black;
+  margin: auto;
+  border: 0px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  height: 1px;
+  width: 100%;
+}
+
+div.articleList {
+  text-align: left;
+}
+
+article.article-container {
+  padding-bottom: 50px;
+}
+
+div.articleTitle {
+  border-left: solid green 10px;
+  padding-left: 15px;
+}
+
+.keep-reading-link {
+  border: 1px solid #e4e4e4;
+  border-radius: 30px;
+  background-color: transparent;
+  color: #767676;
+  font-size: 15px;
+  line-height: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 400;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.keep-reading-link:hover {
+  background-color: green;
+  color: white;
+}
