@@ -1,38 +1,20 @@
 import React from "react";
 
-class About extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.componentDidMount = this.componentDidMount.bind(this);
-  }
-
-  componentDidMount() {
-    fetch('https://instagram.com/p/BYmuVA-gAtx/media/?size=l')
-      .then((response) => {
-        console.log(response)
-        return response;
-      })
-      .then((json) => {
-        console.log(json.url)
-
-        this.setState({url: json.url});
-      });
-  }
-
-  componentWillUnmount() {
-    console.log('goodbye')
-  }
-
-  render() {
-    return <div>
-      <h1>Hello, {this.props.name}</h1>
-      <div>
-        <img src={this.state.url} alt="boohoo" className="img-responsive"/>
-        <span>Hello</span>
-      </div>
+export default () => {
+  return (
+    <div className='center'>
+      <h1>Me</h1>
+      <article style={{marginTop: "15%", margin: "auto", width: "50%", textAlign: "left"}}>
+        <p>
+          I'm a Full Stack Dev excited about building fast and user friendly applications.
+        </p>
+        <p>
+          When I'm not coding I like to cook, rock climb, and cycle.  I enoy hot coffee, Ramen, and convenient parking spaces.
+        </p>
+        <p>
+          Currently <a className="linkStyle" href="https://twitter.com/sweetgreen?lang=en">@Sweetgreen</a>
+        </p>
+      </article>
     </div>
-  }
+  )
 }
-
-export default About;
