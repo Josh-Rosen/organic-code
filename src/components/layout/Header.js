@@ -5,6 +5,7 @@ import { IconContext } from "react-icons";
 import { NavLink } from "react-router-dom";
 import NavBar from "./NavBar";
 import DarkModeToggle from "./components/DarkModeToggle"
+import { MdMenu } from 'react-icons/md';
 
 class Header extends React.Component {
   constructor(props) {
@@ -25,6 +26,17 @@ class Header extends React.Component {
         </NavLink>
         <NavBar />
         <DarkModeToggle />
+        <div className="dropdown-nav">
+          <h2>
+            <MdMenu />
+            <div className="dropdown-nav-content">
+              <div>a</div>
+              <div>a</div>
+              <div>a</div>
+              <div>a</div>
+            </div>
+          </h2>
+        </div>
       </header>
     )
   }
