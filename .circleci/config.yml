@@ -34,6 +34,7 @@ jobs:
       - image: circleci/node:10
     working_directory: ~/organic-code
     steps:
+      - checkout
       - run:
           name: create a production react build
           command: yarn build
