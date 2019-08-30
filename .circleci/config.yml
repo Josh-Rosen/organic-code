@@ -7,12 +7,12 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:8.11.0
+      - image: circleci/node:10
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
-    working_directory: $CIRCLE_WORKING_DIRECTORY
+    working_directory: ~/organic-code
     steps:
       - checkout
       # Download and cache dependencies
@@ -31,8 +31,8 @@ jobs:
       - run: yarn test
   deploy:
     docker:
-      - image: circleci/node:8.11.0
-    working_directory: $CIRCLE_WORKING_DIRECTORY
+      - image: circleci/node:10
+    working_directory: ~/organic-code
     steps:
       - run:
           name: create a production react build
