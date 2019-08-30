@@ -27,7 +27,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      # run tests!
       - run: yarn test
   deploy:
     docker:
@@ -35,6 +34,11 @@ jobs:
     working_directory: ~/organic-code
     steps:
       - checkout
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: create a production react build
           command: yarn build
