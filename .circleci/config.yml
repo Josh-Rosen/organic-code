@@ -30,6 +30,8 @@ jobs:
       # run tests!
       - run: yarn test
   deploy:
+    docker:
+      - image: circleci/node:8.11.0
     working_directory: $CIRCLE_WORKING_DIRECTORY
     steps:
       - run:
