@@ -51,7 +51,7 @@ jobs:
             pip install awscli
       - run:
           command: |
-            aws s3 sync ~/build $S3_BUCKET --delete --recursive
+            aws s3 sync ~/build $S3_BUCKET --delete
       - run:
           command: |
             aws cloudfront create-invalidation
