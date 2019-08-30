@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Header, Content, Footer } from './components/layout';
 import { About, Home, Blog, Projects, Contact } from './components/pages';
 import HelloWorld from './components/pages/blog/HelloWorld';
