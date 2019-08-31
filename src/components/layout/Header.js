@@ -1,7 +1,4 @@
 import React from "react";
-import { DiTerminalBadge } from 'react-icons/di';
-import { GoTerminal } from 'react-icons/go';
-import { IconContext } from "react-icons";
 import { NavLink } from "react-router-dom";
 import NavBar from "./NavBar";
 import DarkModeToggle from "./components/DarkModeToggle"
