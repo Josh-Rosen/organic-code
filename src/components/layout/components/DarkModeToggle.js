@@ -13,12 +13,9 @@ class DarkModeToggle extends Component {
   }
 
   render() {
-    return <div
-      className="header-dark-mode cursor-pointer"
-      onClick={this.toggleDarkModeToggle}
-    >
+    return <div className="header-dark-mode">
       <div className="dark-mode-icon">
-        {this.state.mode}
+        <span onClick={this.toggleDarkModeToggle} className="cursor-pointer">{this.state.mode}</span>
       </div>
     </div>
   }
