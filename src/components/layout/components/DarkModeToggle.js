@@ -3,19 +3,39 @@ import React, { Component } from "react";
 class DarkModeToggle extends Component {
   constructor(props) {
     super(props);
-    this.state = {mode: '😎'};
-    this.toggleDarkModeToggle = this.toggleDarkModeToggle.bind(this);
+    this.state = {mode: this.getEmoji(localStorage.getItem('theme') || 'light')};
+    this.toggleDarkMode = this.toggleDarkMode.bind(this);
   }
 
-  toggleDarkModeToggle() {
-    const newMode = this.state.mode === '😎' ? '🌚' : '😎';
-    this.setState({mode: newMode});
+  getEmoji(theme) {
+    return theme === 'light' ? '😎' : '🌚';
+  }
+
+  getTheme(emoji) {
+    return emoji === '😎' ? 'light' : 'dark';
+  }
+
+  toggleDarkMode() {
+    //// TODO: make this into a setState callback
+    const newEmoji = this.isLightThemed(this.state.mode) ? '🌚' : '😎';
+    this.setState({mode: newEmoji});
+    const newTheme = this.getTheme(newEmoji);
+    this.setTheme(newTheme);
+  }
+
+  isLightThemed(emoji) {
+    return emoji === '😎';
+  }
+
+  setTheme(newTheme) {
+    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
   }
 
   render() {
     return <div className="header-dark-mode">
       <div className="dark-mode-icon">
-        <span onClick={this.toggleDarkModeToggle} className="cursor-pointer">{this.state.mode}</span>
+        <span onClick={this.toggleDarkMode} className="cursor-pointer">{this.state.mode}</span>
       </div>
     </div>
   }

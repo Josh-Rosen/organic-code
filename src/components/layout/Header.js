@@ -24,14 +24,14 @@ class Header extends React.Component {
           className="linkStyle"
         >
           <div className="header-home-link">
-            <h2>Organic Code</h2>
+            <h2 className="green">Organic Code</h2>
           </div>
         </NavLink>
         <NavBar />
         <DarkModeToggle />
         <div className="dropdown-nav">
           <h2>
-            <MdMenu onClick={this.toggleDropdown} />
+            <MdMenu onClick={this.toggleDropdown} className="cursor-pointer" />
             { this.state.dropdownIsOpen &&
               <div className="dropdown-nav-content">
                 {

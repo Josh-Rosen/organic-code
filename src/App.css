@@ -21,7 +21,7 @@
 
 .linkStyle {
   text-decoration: none;
-  color: green;
+  color: var(--green-text);
 }
 
 .body {
@@ -33,9 +33,13 @@
 }
 
 .footer {
-  border-top: 1px solid green;
-  padding-top: 15px;
+  border-top: 1px solid var(--green-text);
   text-align: center;
+}
+
+.heart-icon {
+  color: var(--heart);
+  font-size: 13px;
 }
 
 .blackLink {
@@ -63,11 +67,11 @@
 }
 
 .profileIcon:hover {
-  color: orange;
+  color: var(--orange-text);
 }
 
 div.separator {
-  background-color: lightgrey;
+  background-color: var(--separator);
   width: 100%;
   height: 1px;
   margin-top: 15px;
@@ -82,12 +86,16 @@ div.separator {
 }
 
 .green {
-  color: green;
+  color: var(--green-text);
 }
 
 .flex-center {
   display: flex;
   align-items: center;
+}
+
+h1, h2, h3, h4, p, small {
+  color: var(--info-text);
 }
 
 .topHeader {
@@ -108,13 +116,12 @@ div.separator {
     display: none;
   }
 
-  div.dark-mode-icon {
-    display: none;
+  div.header-dark-mode {
+    margin-left: auto;
   }
 
   div.dropdown-nav {
     display: block;
-    width: 50px;
     text-align: right;
     padding-right: 3px;
   }
@@ -128,7 +135,7 @@ div.separator {
   display: block;
   position: absolute;
   right: 0;
-  background-color: #f9f9f9;
+  background-color: var(--dropdown-nav-color);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
@@ -144,12 +151,12 @@ div.separator {
   margin: auto;
   display: flex;
   justify-content: space-around;
-  color: green;
+  color: var(--green-text);
 }
 
 a.activeNavLink {
   text-decoration: none;
-  color: orange;
+  color: var(--orange-text);
 }
 
 .header-nav-links {
@@ -212,13 +219,13 @@ article.article-container {
 }
 
 div.articleTitle {
-  border-left: solid green 10px;
+  border-left: solid var(--green-text) 10px;
   padding-left: 15px;
 }
 
 div.articleTitle:hover {
   cursor: pointer;
-  background-color: #E8E8E8;
+  background-color: var(--article-hover);
 }
 
 .dark-mode-background {
@@ -240,10 +247,6 @@ div.articleTitle:hover {
 }
 
 .keep-reading-link:hover {
-  background-color: green;
+  background-color: var(--green-text);
   color: white;
-}
-
-.blog-date {
-  color: black;
 }

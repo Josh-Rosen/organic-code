@@ -6,6 +6,9 @@ import HelloWorld from './components/pages/blog/HelloWorld';
 
 import './App.css';
 
+const currentTheme = localStorage.getItem('theme') || 'light';
+document.body.setAttribute('data-theme', currentTheme);
+
 function App() {
   return (
     <Router>
