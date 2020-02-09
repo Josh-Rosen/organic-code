@@ -29,31 +29,33 @@ class Header extends React.Component {
         </NavLink>
         <NavBar />
         <DarkModeToggle />
-        <div className="dropdown-nav">
-          <h2>
-            <MdMenu onClick={this.toggleDropdown} className="cursor-pointer" />
-            { this.state.dropdownIsOpen &&
-              <div className="dropdown-nav-content">
-                {
-                  NavLinks.map(linkData => {
-                    return(
-                      <div>
-                        <NavLink
-                          to={linkData.link}
-                          activeClassName='activeNavLink'
-                          className="linkStyle"
-                          onClick={this.toggleDropdown}
-                        >
-                          {linkData.text}
-                        </NavLink>
-                      </div>
-                    )
-                  })
-                }
-              </div>
-            }
-          </h2>
-        </div>
+        { false &&
+          <div className="dropdown-nav">
+            <h2>
+              <MdMenu onClick={this.toggleDropdown} className="cursor-pointer" />
+              { this.state.dropdownIsOpen &&
+                <div className="dropdown-nav-content">
+                  {
+                    NavLinks.map(linkData => {
+                      return(
+                        <div>
+                          <NavLink
+                            to={linkData.link}
+                            activeClassName='activeNavLink'
+                            className="linkStyle"
+                            onClick={this.toggleDropdown}
+                          >
+                            {linkData.text}
+                          </NavLink>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              }
+            </h2>
+          </div>
+        }
       </header>
     )
   }

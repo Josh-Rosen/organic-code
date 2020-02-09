@@ -4,7 +4,7 @@
   --font-color: #424242;
   --bg-color: #fff;
   --green-text: green;
-  --opposite-green-text: #96E890;
+  --opposite-green-text: #4dbb45;
   --orange-text: orange;
   --info-text: black;
   --separator: darkgrey;
@@ -17,14 +17,14 @@
 [data-theme="dark"] {
   --primary-color: #282C2B;
   --secondary-color: #818cab;
-  --green-text: #96E890;
+  --green-text: #4dbb45;
   --opposite-green-text: green;
   --orange-text: #FFCE90;
   --info-text: #dcdcdce0;
   --separator: grey;
   --bg-color: #282C2B;
   --heart: #ffa7c4;
-  --article-hover: #959EA1;
+  --article-hover: #1b1b1b;
   --heading-color: #818cab;
   --dropdown-nav-color: #272626;
 }
