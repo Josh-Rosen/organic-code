@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Header, Content, Footer } from './components/layout';
-import { About, Home, Blog, Projects, Contact } from './components/pages';
+import { Home } from './components/pages';
 import HelloWorld from './components/pages/blog/HelloWorld';
 
 import './App.css';
@@ -16,11 +16,7 @@ function App() {
         <Header />
         <Content>
           <Route path="/" exact component={Home} />
-          <Route exact path="/blog/" component={Blog} />
           <Route exact path="/blog/HelloWorld" component={HelloWorld} />
-          <Route path="/projects/" component={Projects} />
-          <Route path="/about" exact component={About} />
-          <Route path="/contact" exact component={Contact} />
         </Content>
         <Footer />
       </div>
