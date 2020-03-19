@@ -1,13 +1,13 @@
 import About from './About';
 import Home from './Home';
-import Blog from './Blog';
+import BlogList from './BlogList';
 import Projects from './Projects';
 import Contact from './Contact';
 
 export {
   Home,
   About,
-  Blog,
+  BlogList,
   Contact,
   Projects,
 };
