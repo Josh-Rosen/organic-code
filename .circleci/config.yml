@@ -22,12 +22,12 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run: sudo apt-get update && sudo apt-get install git
-      - run: yarn install
+      - run: npm install
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn test
+      - run: npm test
   deploy:
     docker:
       - image: circleci/node:10
@@ -36,14 +36,14 @@ jobs:
       - NODE_ENV: production
     steps:
       - checkout
-      - run: yarn install
+      - run: npm install
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: create a production react build
-          command: yarn build
+          command: npm build
       - run:
           name: install AWS CLI (first install pip, the Python package manager)
           command: |

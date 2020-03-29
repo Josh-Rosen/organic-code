@@ -2,7 +2,7 @@ import React, { Component } from "react";
 const lightTheme = 'light';
 const darkTheme = 'dark';
 const sunWithShades = '😎';
-const moonFace = '🌝';
+const moonEmoji = '🌛';
 
 class DarkModeToggle extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class DarkModeToggle extends Component {
   }
 
   getEmoji(theme) {
-    return theme === lightTheme ? sunWithShades : moonFace;
+    return theme === lightTheme ? sunWithShades : moonEmoji;
   }
 
   getTheme(emoji) {
@@ -21,7 +21,7 @@ class DarkModeToggle extends Component {
 
   toggleDarkMode() {
     //// TODO: make this into a setState callback
-    const newEmoji = this.isLightThemed(this.state.mode) ? moonFace : sunWithShades;
+    const newEmoji = this.isLightThemed(this.state.mode) ? moonEmoji : sunWithShades;
     this.setState({mode: newEmoji});
     const newTheme = this.getTheme(newEmoji);
     this.setTheme(newTheme);
