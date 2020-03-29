@@ -1,9 +1,11 @@
-const blogLinkInfo = [
+const blogLinkList = [
   {
+    key: 'HelloWorld',
+    path: '/HelloWorld',
     title: 'Load Balancing AWS Lambdas',
     date: '12-14-1991',
     description: 'How to properly generate AWS Lambda responses for targets of Application Load Balancers',
-  },
+  }
   // {
   //   title: 'Dynamic DynamoDB Updates',
   //   date: '12-14-1991',
@@ -16,4 +18,9 @@ const blogLinkInfo = [
   // }
 ];
 
-export default blogLinkInfo;
+const blogLinkMap = blogLinkList.reduce((obj, linkInfo) => {
+  obj[linkInfo.key] = linkInfo;
+  return obj;
+},{});
+
+export {blogLinkList, blogLinkMap};

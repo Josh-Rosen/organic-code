@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default ({title, date, description}) => {
+export default ({title, date, description, path}) => {
   return (
     <article className="articleLink">
       <div className='top-right-vertical-border' />
@@ -13,7 +13,7 @@ export default ({title, date, description}) => {
       <div className='bottom-left-vertical-border' />
       <div className='bottom-left-horizontal-border' />
       <NavLink
-        to="/blog/HelloWorld"
+        to={path}
         className="linkStyle"
       >
         <div className="articleTitle">
