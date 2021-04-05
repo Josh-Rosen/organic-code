@@ -6,7 +6,7 @@ export default () => {
   return (
     <div className='center'>
       <div className="articleList">
-        {blogLinkList.map(linkInfo => <Post {...linkInfo} />)}
+        {false && blogLinkList.map(linkInfo => <Post {...linkInfo} />)}
       </div>
     </div>
   )
