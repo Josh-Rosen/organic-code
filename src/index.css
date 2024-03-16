@@ -13,6 +13,7 @@
   --article-hover: #E8E8E8;
   --heading-color: #292922;
   --dropdown-nav-color: #f9f9f9;
+  --button-text: white;
 }
 
 [data-theme="dark"] {
@@ -28,6 +29,7 @@
   --article-hover: #1b1b1b;
   --heading-color: #818cab;
   --dropdown-nav-color: #272626;
+  --button-text: black;
 }
 
 body {

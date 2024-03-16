@@ -1,12 +1,53 @@
 import React from "react";
-import PreviousNextNavigator from './PreviousNextNavigator'
+import Header from "./Header";
+import Footer from "./Footer";
 
-export default ({props}) => (
-  <div className='center'>
-    <h1>{props.title}</h1>
-    <h5>{props.date}</h5>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt eros et libero rutrum, eu dapibus lacus hendrerit. Nam tortor sem, fringilla a sagittis at, vestibulum vitae mi. Vivamus feugiat quam nec sodales accumsan. Fusce efficitur tortor a volutpat dictum. Fusce nec blandit nibh. Cras sed magna tortor. Cras lobortis sed nibh nec euismod. Sed suscipit facilisis justo. Sed eget orci ut risus consequat facilisis sit amet venenatis nisi. Quisque placerat, lorem ut ullamcorper blandit, libero sem dapibus orci, nec accumsan lectus metus ac nulla. Nullam a ullamcorper massa. Morbi rutrum luctus ligula, eu accumsan nisi accumsan vel. Morbi sit amet mi lorem. Suspendisse ac volutpat nulla.
-    </p>
-    <PreviousNextNavigator props={props} />
-  </div>
-);
+const HelloWorld = ({ data, router }) => {
+  return (
+    <div className="center">
+      <Header props={data} />
+      <div className="blogpost">
+        <h3>
+          <span className='green'>#</span> Introduction
+        </h3>
+        <div className="blogPostSection">
+          <p>
+            Welcome to Organic Code! My name is Josh, and I'm a Senior Software Engineer who is excited to start writing about software.
+          </p>
+          <p>
+            This blog will be my digital canvas to articulate and share my journey, insights, and perspectives on the dynamic world of software engineering.
+          </p>
+        </div>
+        <h3>
+          <span className='green'>#</span> Future Posts
+        </h3>
+        <div className="blogPostSection">
+          <p>
+            I'm eager to dive in and discuss a variety of topics I've encountered in my career, including:
+          </p>
+          <ul>
+            <li>Backend Engineering: The ins and outs of creating server-side software</li>
+            <li>Infrastructure: Developing and deploying scalable architecture</li>
+            <li>Databases: Exploring SQL and NoSQL solutions and tradeoffs</li>
+            <li>Observability: The art of monitoring systems and gaining actionable insights</li>
+            <li>Documentation: Crafting clear and effective guides and manuals</li>
+            <li>Code Reviews: Best practices for constructively reviewing code</li>
+            <li>Mentorship: Sharing knowledge and growing together in the tech industry</li>
+            <li>And more!</li>
+          </ul>
+        </div>
+        <h3>
+          <span className='green'>#</span> My Embarking Thoughts
+        </h3>
+        <div className="blogPostSection">
+          <p>
+            I looking forward to start sharing my perspectives on software. A huge thank you for reading my first post. This is just the beginning, so stay tuned for more insights and discussions!
+          </p>
+        </div>
+        </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default HelloWorld;

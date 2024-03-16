@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Content, Footer } from './components/layout';
-import { Home } from './components/pages';
-import { HelloWorld } from './components/pages/blog';
-import {blogLinkMap} from './components/pages/blog/blogLinkInfo';
+import { Header, Content, Footer } from "./components/layout";
+import { Home } from "./components/pages";
+import {
+  blogLinkList,
+} from "./components/pages/blog/blogLinkInfo";
 
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
@@ -14,11 +15,18 @@ function App() {
         <Header />
         <Content>
           <Route path="/" exact component={Home} />
-          <Route
-            exact
-            path="/HelloWorld"
-            render={props => <HelloWorld props={blogLinkMap.HelloWorld} {...props} />}
-          />
+          {blogLinkList.map((blogLink) => {
+            return (
+              <Route
+                key={blogLink.key}
+                exact
+                path={blogLink.path}
+                render={(props) => (
+                  <blogLink.component data={blogLink} router={props} />
+                )}
+              />
+            );
+          })}
         </Content>
         <Footer />
       </div>
