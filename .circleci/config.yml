@@ -58,7 +58,9 @@ jobs:
             unzip awscliv2.zip
       - run:
           name: Verify AWS CLI installation
-          command: aws --version      sudo ./aws/install
+          command: |
+            sudo ./aws/install
+            aws --version
       - run:
           command: |
             aws s3 sync ~/organic-code/build $S3_BUCKET --delete
