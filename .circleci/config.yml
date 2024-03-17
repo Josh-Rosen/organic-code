@@ -36,11 +36,15 @@ jobs:
       - NODE_ENV: production
     steps:
       - checkout
+      - restore_cache:  # Restore the saved cache
+          keys:
+            - v2-dependencies-{{ checksum "package.json" }}
+            - v2-dependencies-
       - run: npm install
-      # - save_cache:
-      #     paths:
-      #       - node_modules
-      #     key: v1-dependencies-{{ checksum "package.json" }}
+      - save_cache:
+          key: v2-dependencies-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
       - run:
           name: create a production react build
           command: npm run build
