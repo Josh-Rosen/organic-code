@@ -1,4 +1,3 @@
-const navLinks = [
-];
+const navLinks = [];
 
 export default navLinks;

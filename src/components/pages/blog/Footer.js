@@ -1,12 +1,14 @@
-import { NavLink } from "react-router-dom";
+import React from 'react';
 
-function Footer({ props }) {
+import { NavLink } from 'react-router-dom';
+
+function Footer() {
   return (
-    <>
-      <NavLink to="/" className="linkStyle">
-        <button className="button">Back</button>
-      </NavLink>
-    </>
+    <NavLink to="/" className="linkStyle">
+      <button type="button" className="button">
+        Back
+      </button>
+    </NavLink>
   );
 }
 

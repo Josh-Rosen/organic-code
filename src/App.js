@@ -1,16 +1,10 @@
-import React from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
-import { Header, Content, Footer } from "./components/layout";
-import { Home } from "./components/pages";
-import {
-  blogLinkList,
-} from "./components/pages/blog/blogLinkInfo";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Header, Content, Footer } from './components/layout';
+import { Home } from './components/pages';
+import blogLinkList from './components/pages/blog/blogLinkInfo';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   return (
@@ -20,16 +14,14 @@ function App() {
         <Content>
           <Routes>
             <Route path="/" exact element={<Home />} />
-              {blogLinkList.map((blogLink) => {
-                return (
-                  <Route
-                    key={blogLink.key}
-                    exact
-                    path={blogLink.path}
-                    element={<blogLink.component data={ blogLink } />}
-                  />
-                );
-              })}
+            {blogLinkList.map((blogLink) => (
+              <Route
+                key={blogLink.key}
+                exact
+                path={blogLink.path}
+                element={<blogLink.component data={blogLink} />}
+              />
+            ))}
           </Routes>
         </Content>
         <Footer />

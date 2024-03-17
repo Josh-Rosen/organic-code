@@ -1,47 +1,60 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+
 const lightTheme = 'light';
 const darkTheme = 'dark';
 const sunWithShades = '😎';
 const moonEmoji = '🌛';
 
 class DarkModeToggle extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {mode: this.getEmoji(localStorage.getItem('theme') || lightTheme)};
-    this.toggleDarkMode = this.toggleDarkMode.bind(this);
-  }
-
-  getEmoji(theme) {
+  static getEmoji(theme) {
     return theme === lightTheme ? sunWithShades : moonEmoji;
   }
 
-  getTheme(emoji) {
+  static getTheme(emoji) {
     return emoji === sunWithShades ? lightTheme : darkTheme;
   }
 
-  toggleDarkMode() {
-    //// TODO: make this into a setState callback
-    const newEmoji = this.isLightThemed(this.state.mode) ? moonEmoji : sunWithShades;
-    this.setState({mode: newEmoji});
-    const newTheme = this.getTheme(newEmoji);
-    this.setTheme(newTheme);
-  }
-
-  isLightThemed(emoji) {
+  static isLightThemed(emoji) {
     return emoji === sunWithShades;
   }
 
-  setTheme(newTheme) {
+  static setTheme(newTheme) {
     document.body.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      mode: DarkModeToggle.getEmoji(
+        localStorage.getItem('theme') || lightTheme,
+      ),
+    };
+    this.toggleDarkMode = this.toggleDarkMode.bind(this);
+  }
+
+  toggleDarkMode() {
+    /// / TODO: make this into a setState callback
+    const { mode } = this.state;
+    const newEmoji = DarkModeToggle.isLightThemed(mode)
+      ? moonEmoji
+      : sunWithShades;
+    this.setState({ mode: newEmoji });
+    const newTheme = DarkModeToggle.getTheme(newEmoji);
+    DarkModeToggle.setTheme(newTheme);
+  }
+
   render() {
-    return <div className="header-dark-mode">
-      <div className="dark-mode-icon">
-        <span onClick={this.toggleDarkMode} className="cursor-pointer">{this.state.mode}</span>
+    const { mode } = this.state;
+    return (
+      <div className="header-dark-mode">
+        <div className="dark-mode-icon">
+          <span onClick={this.toggleDarkMode} className="cursor-pointer">
+            {mode}
+          </span>
+        </div>
       </div>
-    </div>
+    );
   }
 }
 

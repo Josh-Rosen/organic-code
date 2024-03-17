@@ -1,3 +1,5 @@
-import React from "react";
+import React from 'react';
 
-export default ({ children }) => <div className="content">{children}</div>;
+export default function Content({ children }) {
+  return <div className="content">{children}</div>;
+}
