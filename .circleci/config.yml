@@ -66,15 +66,15 @@ workflows:
   build-deploy:
     jobs:
       - build
-      # - test:
-      #     requires:
-      #       - build
-      # - lint:
-      #     requires:
-      #       - build
-      - deploy:
+      - test:
           requires:
             - build
+      - lint:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - lint
           filters:
             branches:
               only:
