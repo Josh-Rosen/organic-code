@@ -37,10 +37,10 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      # - save_cache:
+      #     paths:
+      #       - node_modules
+      #     key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: create a production react build
           command: npm run build
