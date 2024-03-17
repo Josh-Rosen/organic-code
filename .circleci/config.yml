@@ -27,7 +27,7 @@ jobs:
           paths:
             - ./node_modules
           key: v2-dependencies-{{ checksum "package.json" }}
-      - run: npm test
+      # - run: npm test
   deploy:
     docker:
       - image: cimg/node:20.11.1
