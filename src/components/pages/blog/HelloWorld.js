@@ -8,14 +8,12 @@ function HelloWorld({ data }) {
       <Header props={data} />
       <div className="blogpost">
         <h3>
-          <span className="green">#</span>
-          {' '}
-          Introduction
+          <span className="green">#</span> Introduction
         </h3>
         <div className="blogPostSection">
           <p>
             Welcome to Organic Code! My name is Josh, and I&apos;m a Senior
-            Software Engineer who is excited to start writing about software.
+            Software Engineer.
           </p>
           <p>
             This blog will be my digital canvas to articulate and share my
@@ -24,9 +22,7 @@ function HelloWorld({ data }) {
           </p>
         </div>
         <h3>
-          <span className="green">#</span>
-          {' '}
-          Future Posts
+          <span className="green">#</span> Future Posts
         </h3>
         <div className="blogPostSection">
           <p>
@@ -60,15 +56,12 @@ function HelloWorld({ data }) {
           </ul>
         </div>
         <h3>
-          <span className="green">#</span>
-          {' '}
-          My Embarking Thoughts
+          <span className="green">#</span> My Embarking Thoughts
         </h3>
         <div className="blogPostSection">
           <p>
-            I looking forward to start sharing my perspectives on software. A
-            huge thank you for reading my first post. This is just the
-            beginning, so stay tuned for more insights and discussions!
+            Thank you for reading my first post. Stay tuned for more insights
+            and discussions!
           </p>
         </div>
       </div>
