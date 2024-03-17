@@ -1,5 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 import { Header, Content, Footer } from "./components/layout";
 import { Home } from "./components/pages";
 import {
@@ -10,27 +14,27 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="layout">
         <Header />
         <Content>
-          <Route path="/" exact component={Home} />
-          {blogLinkList.map((blogLink) => {
-            return (
-              <Route
-                key={blogLink.key}
-                exact
-                path={blogLink.path}
-                render={(props) => (
-                  <blogLink.component data={blogLink} router={props} />
-                )}
-              />
-            );
-          })}
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+              {blogLinkList.map((blogLink) => {
+                return (
+                  <Route
+                    key={blogLink.key}
+                    exact
+                    path={blogLink.path}
+                    element={<blogLink.component data={ blogLink } />}
+                  />
+                );
+              })}
+          </Routes>
         </Content>
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
