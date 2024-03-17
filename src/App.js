@@ -1,28 +1,40 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Content, Footer } from './components/layout';
-import { Home } from './components/pages';
-import { HelloWorld } from './components/pages/blog';
-import {blogLinkMap} from './components/pages/blog/blogLinkInfo';
+import React from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import { Header, Content, Footer } from "./components/layout";
+import { Home } from "./components/pages";
+import {
+  blogLinkList,
+} from "./components/pages/blog/blogLinkInfo";
 
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="layout">
         <Header />
         <Content>
-          <Route path="/" exact component={Home} />
-          <Route
-            exact
-            path="/HelloWorld"
-            render={props => <HelloWorld props={blogLinkMap.HelloWorld} {...props} />}
-          />
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+              {blogLinkList.map((blogLink) => {
+                return (
+                  <Route
+                    key={blogLink.key}
+                    exact
+                    path={blogLink.path}
+                    element={<blogLink.component data={ blogLink } />}
+                  />
+                );
+              })}
+          </Routes>
         </Content>
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

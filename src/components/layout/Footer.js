@@ -1,12 +1,16 @@
 import React from "react";
-import { FaHeart } from 'react-icons/fa';
-import ProfileIcons from './components/ProfileIcons'
+import { FaHeart } from "react-icons/fa";
+import ProfileIcons from "./components/ProfileIcons";
 
-export default () => (
-  <footer className="footer">
-    <p>
-      Made with <FaHeart className="heart-icon"/> in LA
-    </p>
-    <ProfileIcons wrapperClasses="footer-profile-icons" />
-  </footer>
-);
+function Footer() {
+  return (
+    <footer className="footer">
+      <p>
+        Made with <FaHeart className="heart-icon" /> in LA
+      </p>
+      <ProfileIcons wrapperClasses="footer-profile-icons" />
+    </footer>
+  );
+}
+
+export default Footer;
