@@ -1,5 +1,7 @@
+import React from 'react';
+
 function Header({ props }) {
-  let { title, date } = props;
+  const { title, date } = props;
   return (
     <>
       <h1 className="green">{title}</h1>

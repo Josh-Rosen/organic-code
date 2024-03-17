@@ -1,13 +1,15 @@
-import React from "react";
-import BlogList from "./BlogList";
+import React from 'react';
+import BlogList from './BlogList';
 
 function Post() {
   return (
     <div>
       <div className="center center-content">
-        <h1>Hi, my name's Josh</h1>
+        <h1>Hi, my name&apos;s Josh</h1>
         <h3 className="homeStubTitle">
-          I'm a <span className="jiggle">Software Engineer</span>
+          I&apos;m a
+          {' '}
+          <span className="jiggle">Software Engineer</span>
         </h3>
         <BlogList />
       </div>

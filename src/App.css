@@ -11,7 +11,6 @@
   }
 }
 
-
 @media (max-width: 601px) {
   .content {
     width: 100%;
@@ -28,7 +27,6 @@
   flex-direction: column;
   display: flex;
   justify-content: space-around;
-
 }
 
 .linkStyle {
@@ -108,7 +106,10 @@ div.separator {
   color: var(--button-text);
   border-radius: 3px;
   border-width: 0;
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-shadow:
+    rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0,
+    rgba(0, 0, 0, 0.07) 0 1px 1px 0;
   box-sizing: border-box;
   cursor: pointer;
   font-size: 100%;
@@ -122,7 +123,9 @@ div.separator {
   font-size: medium;
   text-transform: none;
   transform: translateZ(0);
-  transition: all .2s,box-shadow .08s ease-in;
+  transition:
+    all 0.2s,
+    box-shadow 0.08s ease-in;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -133,7 +136,11 @@ div.separator {
 }
 
 .button:focus {
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+  box-shadow:
+    rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.2) 0 6px 15px 0,
+    rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+    rgba(50, 151, 211, 0.3) 0 0 0 4px;
 }
 
 .flex-center {
@@ -141,7 +148,15 @@ div.separator {
   align-items: center;
 }
 
-h1, h2, h3, h4, h5, p, small, ul, li {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+small,
+ul,
+li {
   color: var(--info-text);
 }
 
@@ -159,8 +174,8 @@ div.blogpost {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.08);
-  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.08);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
 }
 
 /*
@@ -219,7 +234,7 @@ a.activeNavLink {
 
 .jiggle:hover {
   display: inline-block;
-  animation: jiggle 1s cubic-bezier(.36,.07,.19,.97) both;
+  animation: jiggle 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
@@ -230,19 +245,24 @@ a.activeNavLink {
 }
 
 @keyframes jiggle {
-  10%, 90% {
+  10%,
+  90% {
     transform: rotate3d(0, 0, 1, 5deg);
   }
 
-  20%, 80% {
+  20%,
+  80% {
     transform: rotate3d(0, 0, 1, -5deg);
   }
 
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: rotate3d(0, 0, 1, 5deg);
   }
 
-  40%, 60% {
+  40%,
+  60% {
     transform: rotate3d(0, 0, 1, -5deg);
   }
 }

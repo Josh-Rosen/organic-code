@@ -1,7 +1,10 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const BlogLinkInfo = ({ title, date, description, path }) => {
+function Post({ linkInfo }) {
+  const {
+    title, date, description, path,
+  } = linkInfo;
   return (
     <article className="articleLink">
       <div className="top-right-vertical-border" />
@@ -21,6 +24,6 @@ const BlogLinkInfo = ({ title, date, description, path }) => {
       </NavLink>
     </article>
   );
-};
+}
 
-export default BlogLinkInfo;
+export default Post;

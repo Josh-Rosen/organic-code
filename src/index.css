@@ -1,5 +1,5 @@
-[data-theme="light"] {
-  --primary-color: #302AE6;
+[data-theme='light'] {
+  --primary-color: #302ae6;
   --secondary-color: #536390;
   --font-color: #424242;
   --bg-color: #fff;
@@ -10,21 +10,21 @@
   --info-text: black;
   --separator: darkgrey;
   --heart: red;
-  --article-hover: #E8E8E8;
+  --article-hover: #e8e8e8;
   --heading-color: #292922;
   --dropdown-nav-color: #f9f9f9;
   --button-text: white;
 }
 
-[data-theme="dark"] {
-  --primary-color: #282C2B;
+[data-theme='dark'] {
+  --primary-color: #282c2b;
   --secondary-color: #818cab;
   --green-text: #4dbb45;
   --opposite-green-text: green;
-  --orange-text: #FFCE90;
+  --orange-text: #ffce90;
   --info-text: #dcdcdce0;
   --separator: grey;
-  --bg-color: #282C2B;
+  --bg-color: #282c2b;
   --heart: #ffa7c4;
   --article-hover: #1b1b1b;
   --heading-color: #818cab;
@@ -35,14 +35,14 @@
 body {
   background-color: var(--bg-color);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
