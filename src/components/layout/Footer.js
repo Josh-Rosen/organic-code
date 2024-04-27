@@ -6,11 +6,7 @@ function Footer() {
   return (
     <footer className="footer">
       <p>
-        Made with
-        {' '}
-        <FaHeart className="heart-icon" />
-        {' '}
-        in LA
+        Made with <FaHeart className="heart-icon" /> in LA+Denver
       </p>
       <ProfileIcons wrapperClasses="footer-profile-icons" />
     </footer>
