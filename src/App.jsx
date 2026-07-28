@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header, Content, Footer } from './components/layout';
-import { Home } from './components/pages';
+import { Home, NotFound } from './components/pages';
 import blogLinkList from './components/pages/blog/blogLinkInfo';
 
 import './App.css';
@@ -13,15 +13,15 @@ function App() {
         <Header />
         <Content>
           <Routes>
-            <Route path="/" exact element={<Home />} />
+            <Route path="/" element={<Home />} />
             {blogLinkList.map((blogLink) => (
               <Route
                 key={blogLink.key}
-                exact
                 path={blogLink.path}
                 element={<blogLink.component data={blogLink} />}
               />
             ))}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Content>
         <Footer />
