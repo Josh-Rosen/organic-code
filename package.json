@@ -2,38 +2,37 @@
   "name": "organic-code",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "eslint-config-standard": "^17.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.0.1",
-    "react-router-dom": "^6.22.3",
-    "react-scripts": "^5.0.1"
-  },
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "format": "prettier --write 'src/**/*.{js,jsx,json,css,md}'"
+    "dev": "vite",
+    "prebuild": "node scripts/generate-feed.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.{js,jsx,json,css,md,html}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,json,css,md,html}\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-icons": "^5.7.0",
+    "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
-    "jest": "^27.5.1",
-    "prettier": "3.2.5"
+    "@eslint/js": "^9.39.5",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "@vitejs/plugin-react": "^6.0.4",
+    "eslint": "^9.39.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.8.0",
+    "jsdom": "^30.0.0",
+    "prettier": "^3.9.6",
+    "vite": "^8.1.5",
+    "vitest": "^4.1.10"
   }
 }
