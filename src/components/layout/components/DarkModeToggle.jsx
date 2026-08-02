@@ -27,7 +27,7 @@ class DarkModeToggle extends Component {
     super(props);
     this.state = {
       mode: DarkModeToggle.getEmoji(
-        localStorage.getItem('theme') || lightTheme,
+        localStorage.getItem('theme') || lightTheme
       ),
     };
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
@@ -49,9 +49,18 @@ class DarkModeToggle extends Component {
     return (
       <div className="header-dark-mode">
         <div className="dark-mode-icon">
-          <span onClick={this.toggleDarkMode} className="cursor-pointer">
+          <button
+            type="button"
+            onClick={this.toggleDarkMode}
+            className="cursor-pointer icon-button"
+            aria-label={
+              DarkModeToggle.isLightThemed(mode)
+                ? 'Switch to dark mode'
+                : 'Switch to light mode'
+            }
+          >
             {mode}
-          </span>
+          </button>
         </div>
       </div>
     );

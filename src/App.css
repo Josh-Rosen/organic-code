@@ -67,7 +67,7 @@
 .footer-profile-icons {
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-bottom: 3px;
   width: 20%;
 }
@@ -178,8 +178,9 @@ div.blogpost {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
-  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+  /* A border, not a box-shadow: over the dark ground (#282c2b) a black shadow
+     composites to ~1.05:1 and is invisible. --separator reads in both themes. */
+  border-bottom: 1px solid var(--separator);
 }
 
 /*
@@ -201,27 +202,6 @@ div.blogpost {
   }
 }
 
-.NavBar {
-  width: 50%;
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
-  color: var(--green-text);
-}
-
-a.activeNavLink {
-  text-decoration: none;
-  color: var(--orange-text);
-}
-
-.header-nav-links {
-  display: flex;
-  flex-basis: auto; /* default value */
-  flex-grow: 1;
-  justify-content: space-around;
-  max-width: 50%;
-}
-
 .header-home-link {
   width: 160px;
   padding-left: 5px;
@@ -234,6 +214,17 @@ a.activeNavLink {
 
 .dark-mode-icon {
   padding-right: 5px;
+}
+
+/* Strips the default button chrome so the emoji toggle renders as bare text,
+   while keeping the element focusable and keyboard-operable. */
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  line-height: inherit;
 }
 
 .jiggle:hover {
