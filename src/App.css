@@ -9,28 +9,11 @@
   min-height: 100dvh;
 }
 
-@media (min-width: 602px) {
-  .content {
-    width: 70%;
-  }
-}
-
-@media (max-width: 601px) {
-  .content {
-    width: 100%;
-  }
-}
-
+/* Full width: each page sets its own measure (.blogpost caps at 820px), so the
+   reading column no longer tracks a percentage of the viewport. */
 .content {
-  flex-grow: 3;
-  margin: auto;
-}
-
-.rightPanel {
   width: 100%;
-  flex-direction: column;
-  display: flex;
-  justify-content: space-around;
+  flex-grow: 3;
 }
 
 .linkStyle {
@@ -38,30 +21,22 @@
   color: var(--green-text);
 }
 
-.body {
-  height: 100%;
-}
-
 .center {
   text-align: center;
 }
 
+/* A rule and real padding, so the site footer reads as its own region rather
+   than as a second footer stacked onto the post's. */
 .footer {
   text-align: center;
+  border-top: 1px solid var(--separator);
+  margin-top: 3rem;
+  padding: 0.5rem 20px 1rem;
 }
 
 .heart-icon {
   color: var(--heart);
   font-size: 13px;
-}
-
-.blackLink {
-  color: black;
-}
-
-.profileIcons {
-  display: flex;
-  justify-content: space-around;
 }
 
 .footer-profile-icons {
@@ -72,24 +47,8 @@
   width: 20%;
 }
 
-.contact-profile-icons {
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  font-size: 40px;
-}
-
 .profileIcon:hover {
   color: var(--orange-text);
-}
-
-div.separator {
-  background-color: var(--separator);
-  width: 100%;
-  height: 1px;
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 
 .center-content {
@@ -147,11 +106,6 @@ div.separator {
     rgba(50, 151, 211, 0.3) 0 0 0 4px;
 }
 
-.flex-center {
-  display: flex;
-  align-items: center;
-}
-
 h1,
 h2,
 h3,
@@ -164,14 +118,125 @@ li {
   color: var(--info-text);
 }
 
-div.blogpost {
-  max-width: 700px;
+.blogpost {
+  max-width: 820px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  font-size: large;
-  padding-left: 3px;
-  padding-right: 3px;
+  font-size: 1.2rem;
+  /* Long-form copy needs leading the browser default (~1.2) doesn't give it;
+     without this, 18px paragraphs read as solid blocks. */
+  line-height: 1.7;
+  /* padding, not margin: .content has no border or padding of its own, so a
+     top margin here would collapse out through it and do nothing. The 20px
+     sides are the mobile gutter — .content is full width, so without them the
+     text sits against the screen edge. */
+  padding: 3rem 20px 4rem;
+}
+
+.blogpost h1 {
+  font-size: clamp(2.2rem, 6vw, 2.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  margin: 0 0 0.4rem;
+}
+
+.blogpost h2 {
+  font-size: 1.55rem;
+  line-height: 1.3;
+  margin: 2.5rem 0 0.7rem;
+}
+
+.blogpost p {
+  margin: 0 0 0.9em;
+}
+
+/* Everything a technical post needs that had no styling at all: links in
+   prose, inline code, code blocks, quotes, images and rules. */
+.blogpost a {
+  color: var(--green-text);
+}
+
+.blogpost a:hover {
+  color: var(--orange-text);
+}
+
+.blogpost code {
+  background-color: var(--article-hover);
+  border-radius: 3px;
+  padding: 0.12em 0.35em;
+  font-size: 0.88em;
+}
+
+.blogpost pre {
+  background-color: var(--article-hover);
+  border-radius: 3px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  /* Code is the one thing that legitimately exceeds the measure; it scrolls in
+     its own box so the page never scrolls sideways. */
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.blogpost pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.blogpost blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.2rem;
+  border-left: 3px solid var(--separator);
+}
+
+.blogpost img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.blogpost figure {
+  margin: 1.5rem 0;
+}
+
+.blogpost figcaption {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-top: 0.5rem;
+}
+
+.blogpost hr {
+  border: 0;
+  border-top: 1px solid var(--separator);
+  margin: 2.5rem 0;
+}
+
+/* The slot that becomes next/prev navigation once there's a second post; the
+   lone back link is the one-post case of it. */
+.postFooter {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--separator);
+  font-size: 1rem;
+}
+
+/* Sits tight under the title so the two read as one unit, then a clear gap
+   before the body — otherwise the date floats between the two and belongs to
+   neither. Uppercase and tracked so it reads as metadata, not as a sentence. */
+.postDate {
+  display: block;
+  color: var(--info-text);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  /* 0.65 dropped this to ~4:1 against the dark ground once --info-text's own
+     e0 alpha was compounded in; 0.75 keeps it readable at 12.8px. */
+  opacity: 0.75;
+  margin: 0.5rem 0 2.75rem;
 }
 
 .topHeader {
@@ -207,6 +272,15 @@ div.blogpost {
   padding-left: 5px;
 }
 
+/* Not a heading: as an <h2> the site name outranked every post's own section
+   headings on the page. Styled to match what the <h2> rendered as. */
+.wordmark {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.83em 0;
+}
+
 .header-dark-mode {
   width: 160px;
   text-align: right;
@@ -227,39 +301,8 @@ div.blogpost {
   line-height: inherit;
 }
 
-.jiggle:hover {
-  display: inline-block;
-  animation: jiggle 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
 .cursor-pointer:hover {
   cursor: pointer;
-}
-
-@keyframes jiggle {
-  10%,
-  90% {
-    transform: rotate3d(0, 0, 1, 5deg);
-  }
-
-  20%,
-  80% {
-    transform: rotate3d(0, 0, 1, -5deg);
-  }
-
-  30%,
-  50%,
-  70% {
-    transform: rotate3d(0, 0, 1, 5deg);
-  }
-
-  40%,
-  60% {
-    transform: rotate3d(0, 0, 1, -5deg);
-  }
 }
 
 div.top-left-horizontal-border {
@@ -398,6 +441,13 @@ div.articleTitle > p {
   margin: 0;
 }
 
+/* No indent: the "#" marker already signals the hierarchy, so every line of a
+   post — heading, paragraph, list — shares one left edge. */
 div.blogPostSection {
-  padding-left: 1em;
+  padding-left: 0;
+}
+
+div.blogPostSection ul {
+  padding-left: 1.2em;
+  margin: 0 0 0.9em;
 }

@@ -23,12 +23,17 @@ class DarkModeToggle extends Component {
     localStorage.setItem('theme', newTheme);
   }
 
+  /* The inline script in index.html has already resolved this before paint,
+     folding in localStorage and the OS preference. Read what it decided rather
+     than deriving it a second time and disagreeing with the rendered page. */
+  static currentTheme() {
+    return document.body.getAttribute('data-theme') || lightTheme;
+  }
+
   constructor(props) {
     super(props);
     this.state = {
-      mode: DarkModeToggle.getEmoji(
-        localStorage.getItem('theme') || lightTheme
-      ),
+      mode: DarkModeToggle.getEmoji(DarkModeToggle.currentTheme()),
     };
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
   }

@@ -9,6 +9,27 @@
     <title>Organic Code</title>
   </head>
   <body>
+    <!-- Runs before first paint so the theme is already applied when the page
+         renders: React mounting later meant a white flash for dark-mode
+         visitors, and until the attribute existed no custom property resolved
+         at all. Falls back to the OS preference, not to light. -->
+    <script>
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem('theme');
+        } catch (e) {
+          /* private mode: fall through to the OS preference */
+        }
+        var prefersDark =
+          window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.body.setAttribute(
+          'data-theme',
+          stored || (prefersDark ? 'dark' : 'light')
+        );
+      })();
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>

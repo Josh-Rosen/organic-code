@@ -1,11 +1,13 @@
 import React from 'react';
 
 function Header({ props }) {
-  const { title, date } = props;
+  const { title, date, isoDate } = props;
   return (
     <>
-      <h1 className="green">{title}</h1>
-      <h5>{date}</h5>
+      <h1>{title}</h1>
+      <time className="postDate" dateTime={isoDate}>
+        {date}
+      </time>
     </>
   );
 }

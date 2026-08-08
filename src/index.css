@@ -34,6 +34,10 @@
 
 body {
   background-color: var(--bg-color);
+  /* Text colour belongs here, not on a list of element selectors: anything not
+     on that list (time, dd, figcaption, blockquote) inherited the UA default of
+     black and disappeared against the dark ground. */
+  color: var(--info-text);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

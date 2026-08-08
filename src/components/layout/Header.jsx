@@ -7,7 +7,7 @@ function Header() {
     <header className="topHeader">
       <NavLink to="/" className="linkStyle">
         <div className="header-home-link">
-          <h2 className="green">Organic Code</h2>
+          <span className="wordmark green">Organic Code</span>
         </div>
       </NavLink>
       <DarkModeToggle />

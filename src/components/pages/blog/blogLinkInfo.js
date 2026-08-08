@@ -6,8 +6,9 @@ const blogLinkList = [
     key: 'HelloWorld',
     path: '/HelloWorld',
     title: 'Hello World',
-    date: 'Saturday March 16 2024',
-    description: 'My First Blog Post!',
+    date: 'Saturday August 8 2026',
+    isoDate: '2026-08-08',
+    description: 'My First Post',
   },
 ];
 
