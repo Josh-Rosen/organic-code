@@ -1,0 +1,14 @@
+/* Sits tight under the title so the two read as one unit, then a clear gap
+   before the body — otherwise the date floats between the two and belongs to
+   neither. Uppercase and tracked so it reads as metadata, not as a sentence. */
+.date {
+  display: block;
+  color: var(--info-text);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  /* 0.65 dropped this to ~4:1 against the dark ground once --info-text's own
+     e0 alpha was compounded in; 0.75 keeps it readable at 12.8px. */
+  opacity: 0.75;
+  margin: 0.5rem 0 2.75rem;
+}

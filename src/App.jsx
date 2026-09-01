@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header, Content, Footer } from './components/layout';
 import { Home, NotFound } from './components/pages';
-import blogLinkList from './components/pages/blog/blogLinkInfo';
+import blogLinkList from './components/pages/blog/posts';
 
-import './App.css';
+import styles from './App.module.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="layout">
+      <div className={styles.layout}>
         <Header />
         <Content>
           <Routes>
@@ -18,7 +18,7 @@ function App() {
               <Route
                 key={blogLink.key}
                 path={blogLink.path}
-                element={<blogLink.component data={blogLink} />}
+                element={<blogLink.component />}
               />
             ))}
             <Route path="*" element={<NotFound />} />

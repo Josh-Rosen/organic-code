@@ -1,0 +1,6 @@
+/* Full width: each page sets its own measure (.blogpost caps at 820px), so the
+   reading column no longer tracks a percentage of the viewport. */
+.content {
+  width: 100%;
+  flex-grow: 3;
+}

@@ -1,0 +1,53 @@
+/* A rule and real padding, so the site footer reads as its own region rather
+   than as a second footer stacked onto the post's. */
+.footer {
+  text-align: center;
+  border-top: 1px solid var(--separator);
+  margin-top: 3rem;
+  /* Horizontal padding only — vertical space is now the centring, not padding,
+     so the band matches the header exactly. min-height rather than height: on a
+     narrow screen the credit line wraps, and growing beats clipping. */
+  box-sizing: border-box;
+  min-height: var(--chrome-height);
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* space-evenly, not center: `center` piles all the slack above and below the
+     pair and leaves nothing between them, so the credit line and the icons sit
+     on top of each other. This splits the slack three ways — above the text,
+     between the two rows, below the icons — so all three gaps match. */
+  justify-content: space-evenly;
+}
+
+/* The UA's 1em paragraph margins were most of the footer's old height; with a
+   fixed band they'd push the icons out of it. */
+.footer p {
+  margin: 0;
+}
+
+.heart {
+  color: var(--heart);
+  font-size: 13px;
+}
+
+.profileIcons {
+  /* 0 auto, not auto: as a flex item, `auto` top/bottom margins would eat the
+     free space in the column and shove this away from the credit line. */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  /* No bottom padding: it sits inside the item, so it would pad the last gap
+     out past the other two and defeat the even split above. */
+  width: 20%;
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (max-width: 600px) {
+  .profileIcons {
+    width: 50%;
+  }
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './DarkModeToggle.module.css';
 
 const lightTheme = 'light';
 const darkTheme = 'dark';
@@ -52,12 +53,12 @@ class DarkModeToggle extends Component {
   render() {
     const { mode } = this.state;
     return (
-      <div className="header-dark-mode">
-        <div className="dark-mode-icon">
+      <div className={styles.wrapper}>
+        <div className={styles.icon}>
           <button
             type="button"
             onClick={this.toggleDarkMode}
-            className="cursor-pointer icon-button"
+            className={styles.button}
             aria-label={
               DarkModeToggle.isLightThemed(mode)
                 ? 'Switch to dark mode'

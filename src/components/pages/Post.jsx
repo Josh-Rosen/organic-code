@@ -1,22 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './Post.module.css';
 
 function Post({ linkInfo }) {
-  const {
-    title, date, description, path,
-  } = linkInfo;
+  const { title, date, description, path } = linkInfo;
   return (
-    <article className="articleLink">
-      <div className="top-right-vertical-border" />
-      <div className="top-right-horizontal-border" />
-      <div className="top-left-vertical-border" />
-      <div className="top-left-horizontal-border" />
-      <div className="bottom-right-vertical-border" />
-      <div className="bottom-right-horizontal-border" />
-      <div className="bottom-left-vertical-border" />
-      <div className="bottom-left-horizontal-border" />
-      <NavLink to={path} className="linkStyle">
-        <div className="articleTitle">
+    <article className={styles.article}>
+      <div className={`${styles.corner} ${styles.tl}`} />
+      <div className={`${styles.corner} ${styles.tr}`} />
+      <div className={`${styles.corner} ${styles.bl}`} />
+      <div className={`${styles.corner} ${styles.br}`} />
+      <NavLink to={path}>
+        <div className={styles.title}>
           <h2>{title}</h2>
           <small>{date}</small>
           <p>{description}</p>

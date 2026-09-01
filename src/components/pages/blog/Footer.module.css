@@ -1,0 +1,8 @@
+/* The slot that becomes next/prev navigation once there's a second post; the
+   lone back link is the one-post case of it. */
+.footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--separator);
+  font-size: 1rem;
+}

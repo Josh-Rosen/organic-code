@@ -1,3 +1,10 @@
+/* Layout constants, outside the theme blocks — these don't vary by theme.
+   --chrome-height is the shared height of the site header and footer: both
+   read it, so the two bands stay equal without anyone re-measuring. */
+:root {
+  --chrome-height: 4.25rem;
+}
+
 [data-theme='light'] {
   --primary-color: #302ae6;
   --secondary-color: #536390;
@@ -39,14 +46,36 @@ body {
      black and disappeared against the dark ground. */
   color: var(--info-text);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Every link in the app was carrying a .linkStyle class to get exactly this.
+   As a base rule it needs no class, and prose links opt the underline back in
+   via .blogpost a — the only place the default is worth keeping. */
+a {
+  color: var(--green-text);
+  text-decoration: none;
+}
+
+/* Utilities — the only global class names left. Everything else is a CSS
+   module colocated with the component that owns it. Keep this list short: a
+   class belongs here only when more than one component uses it. */
+.center {
+  text-align: center;
+}
+
+.center-content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

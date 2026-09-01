@@ -1,0 +1,64 @@
+.article {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Corner brackets. Each corner is one box drawing two of its own borders —
+   the pair of 1px divs it replaces rendered the same 20px L, at twice the
+   markup and eight separate hover rules. */
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.tl {
+  top: 0;
+  left: 0;
+  border-top: 1px solid var(--green-text);
+  border-left: 1px solid var(--green-text);
+}
+
+.tr {
+  top: 0;
+  right: 0;
+  border-top: 1px solid var(--green-text);
+  border-right: 1px solid var(--green-text);
+}
+
+.bl {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid var(--green-text);
+  border-left: 1px solid var(--green-text);
+}
+
+.br {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid var(--green-text);
+  border-right: 1px solid var(--green-text);
+}
+
+.article:hover .corner {
+  border-color: var(--orange-text);
+}
+
+.title {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.title > h2 {
+  color: var(--green-text);
+  margin: 0;
+}
+
+.title > p {
+  margin: 0.25rem 0 0 0;
+}

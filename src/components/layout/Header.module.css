@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-box so the 1px rule below counts inside the height, and the footer
+     — which has a rule of its own — comes out to the same total. */
+  box-sizing: border-box;
+  min-height: var(--chrome-height);
+  /* A border, not a box-shadow: over the dark ground (#282c2b) a black shadow
+     composites to ~1.05:1 and is invisible. --separator reads in both themes. */
+  border-bottom: 1px solid var(--separator);
+}
+
+.homeLink {
+  width: 160px;
+  padding-left: 5px;
+}
+
+/* Not a heading: as an <h2> the site name outranked every post's own section
+   headings on the page. Styled to match what the <h2> rendered as. */
+.wordmark {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  /* No margin: the h2 default that used to set the header's height is now the
+     header's own min-height, and align-items centres the wordmark in it. */
+  margin: 0;
+  color: var(--green-text);
+}
