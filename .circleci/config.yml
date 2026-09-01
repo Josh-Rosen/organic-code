@@ -4,35 +4,33 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:24.2
+      - image: cimg/node:24.20
     working_directory: ~/organic-code
     steps:
       - checkout
       - restore_cache:
           keys:
-            - v3-dependencies-{{ checksum "package.json" }}
-            - v3-dependencies-
+            - v4-dependencies-{{ checksum "package.json" }}
+            - v4-dependencies-
       - run: npm install
       - save_cache:
           paths:
             - ./node_modules
-          key: v3-dependencies-{{ checksum "package.json" }}
+          key: v4-dependencies-{{ checksum "package.json" }}
       - run: npm run build
   deploy:
     docker:
-      - image: cimg/node:24.2
+      - image: cimg/node:24.20
     working_directory: ~/organic-code
-    environment:
-      - NODE_ENV: production
     steps:
       - checkout
       - restore_cache:  # Restore the saved cache
           keys:
-            - v3-dependencies-{{ checksum "package.json" }}
-            - v3-dependencies-
+            - v4-dependencies-{{ checksum "package.json" }}
+            - v4-dependencies-
       - run: npm install
       - save_cache:
-          key: v3-dependencies-{{ checksum "package.json" }}
+          key: v4-dependencies-{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - run:
