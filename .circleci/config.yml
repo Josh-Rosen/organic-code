@@ -4,7 +4,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:22.16
+      - image: cimg/node:24.2
     working_directory: ~/organic-code
     steps:
       - checkout
@@ -20,7 +20,7 @@ jobs:
       - run: npm run build
   deploy:
     docker:
-      - image: cimg/node:22.16
+      - image: cimg/node:24.2
     working_directory: ~/organic-code
     environment:
       - NODE_ENV: production
