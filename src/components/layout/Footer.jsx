@@ -1,18 +1,15 @@
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
 import ProfileIcons from './components/ProfileIcons';
+import styles from './Footer.module.css';
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <p>
-        Made with
-        {' '}
-        <FaHeart className="heart-icon" />
-        {' '}
-        in LA
+        Made with <FaHeart className={styles.heart} /> in LA+Denver
       </p>
-      <ProfileIcons wrapperClasses="footer-profile-icons" />
+      <ProfileIcons wrapperClasses={styles.profileIcons} />
     </footer>
   );
 }

@@ -1,4 +1,4 @@
 import Home from './Home';
-import BlogList from './BlogList';
+import NotFound from './NotFound';
 
-export { Home, BlogList };
+export { Home, NotFound };

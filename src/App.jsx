@@ -1,27 +1,27 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header, Content, Footer } from './components/layout';
-import { Home } from './components/pages';
-import blogLinkList from './components/pages/blog/blogLinkInfo';
+import { Home, NotFound } from './components/pages';
+import blogLinkList from './components/pages/blog/posts';
 
-import './App.css';
+import styles from './App.module.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="layout">
+      <div className={styles.layout}>
         <Header />
         <Content>
           <Routes>
-            <Route path="/" exact element={<Home />} />
+            <Route path="/" element={<Home />} />
             {blogLinkList.map((blogLink) => (
               <Route
                 key={blogLink.key}
-                exact
                 path={blogLink.path}
-                element={<blogLink.component data={blogLink} />}
+                element={<blogLink.component />}
               />
             ))}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Content>
         <Footer />

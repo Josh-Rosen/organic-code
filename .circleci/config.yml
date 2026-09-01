@@ -1,27 +1,17 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
-version: 2
+version: 2.1
+orbs:
+  aws-cli: circleci/aws-cli@5.1
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: cimg/node:20.11.1
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
     working_directory: ~/organic-code
     steps:
       - checkout
-      # Download and cache dependencies
       - restore_cache:
           keys:
             - v2-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
             - v2-dependencies-
-      - run: sudo apt-get update && sudo apt-get install git
       - run: npm install
       - save_cache:
           paths:
@@ -48,21 +38,11 @@ jobs:
       - run:
           name: create a production react build
           command: npm run build
+      - aws-cli/install
       - run:
-          name: Update packages
-          command: sudo apt-get update
-      - run:
-          name: Install AWS CLI v2
+          name: Deploy to S3
           command: |
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            unzip awscliv2.zip
-      - run:
-          name: Verify AWS CLI installation
-          command: |
-            sudo ./aws/install
-            aws --version
-      - run:
-          command: |
+            [ -f ~/organic-code/build/index.html ] || exit 1
             aws s3 sync ~/organic-code/build $S3_BUCKET --delete
       - run:
           command: |
@@ -70,7 +50,6 @@ jobs:
             --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths /index.html
 
 workflows:
-  version: 2
   build-deploy:
     jobs:
       - build

@@ -1,0 +1,10 @@
+.layout {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  /* min-height, not height: a fixed height lets .content shrink below its
+     content size, so a long post overflows past the footer instead of
+     pushing it down. dvh accounts for mobile browser chrome. */
+  min-height: 100vh;
+  min-height: 100dvh;
+}
