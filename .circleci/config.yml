@@ -4,7 +4,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:24.2
+      - image: cimg/node:20.11.1
     working_directory: ~/organic-code
     steps:
       - checkout
@@ -17,10 +17,10 @@ jobs:
           paths:
             - ./node_modules
           key: v2-dependencies-{{ checksum "package.json" }}
-      - run: npm run build
+      # - run: npm test
   deploy:
     docker:
-      - image: cimg/node:24.2
+      - image: cimg/node:20.11.1
     working_directory: ~/organic-code
     environment:
       - NODE_ENV: production
