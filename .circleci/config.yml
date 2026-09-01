@@ -10,13 +10,13 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v2-dependencies-{{ checksum "package.json" }}
-            - v2-dependencies-
+            - v3-dependencies-{{ checksum "package.json" }}
+            - v3-dependencies-
       - run: npm install
       - save_cache:
           paths:
             - ./node_modules
-          key: v2-dependencies-{{ checksum "package.json" }}
+          key: v3-dependencies-{{ checksum "package.json" }}
       - run: npm run build
   deploy:
     docker:
@@ -28,11 +28,11 @@ jobs:
       - checkout
       - restore_cache:  # Restore the saved cache
           keys:
-            - v2-dependencies-{{ checksum "package.json" }}
-            - v2-dependencies-
+            - v3-dependencies-{{ checksum "package.json" }}
+            - v3-dependencies-
       - run: npm install
       - save_cache:
-          key: v2-dependencies-{{ checksum "package.json" }}
+          key: v3-dependencies-{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - run:
